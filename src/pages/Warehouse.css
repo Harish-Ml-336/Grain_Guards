@@ -1,0 +1,197 @@
+.warehouse-page {
+  animation: fadeIn 0.4s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.warehouse-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+
+.wh-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.wh-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.wh-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wh-block-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wh-block-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.wh-block-card.selected {
+  border-color: var(--primary-lighter);
+  background: var(--primary-bg);
+  box-shadow: var(--glow-primary);
+}
+
+.wh-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wh-block-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.wh-temp-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wh-block-name {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.wh-block-capacity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.wh-cap-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.wh-cap-labels strong {
+  color: var(--text);
+}
+
+.wh-cap-track {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.wh-cap-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.wh-booking-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.wh-selected-indicator {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: var(--bg);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+}
+
+.wh-selected-indicator strong {
+  color: var(--primary);
+}
+
+.wh-booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wh-book-btn {
+  padding: 12px;
+  background: var(--gradient-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.wh-book-btn:hover {
+  box-shadow: 0 4px 12px rgba(27,94,32,0.2);
+  transform: translateY(-1px);
+}
+
+.wh-bookings-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.wh-bookings-table-wrapper {
+  overflow-x: auto;
+}
+
+.wh-bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.wh-bookings-table th, .wh-bookings-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.wh-bookings-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.wh-status-badge {
+  background: var(--safe-bg);
+  color: var(--safe);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+@media (max-width: 900px) {
+  .warehouse-layout { grid-template-columns: 1fr; }
+}

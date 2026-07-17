@@ -1,0 +1,248 @@
+.schemes-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.schemes-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+}
+
+.schemes-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.schemes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scheme-item-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 16px;
+  transition: var(--transition);
+}
+
+.scheme-item-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.scheme-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-bg);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.scheme-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.scheme-item-content h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.scheme-item-content p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.scheme-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.scheme-tag {
+  background: var(--bg);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.scheme-action-btn {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background: var(--primary-bg);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  margin-top: 6px;
+}
+
+.scheme-action-btn:hover:not(.applied) {
+  background: var(--primary);
+  color: #fff;
+}
+
+.scheme-action-btn.applied {
+  background: #E8F5E9;
+  color: #2E7D32;
+  cursor: default;
+}
+
+.schemes-box-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.no-app-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 30px;
+}
+
+/* Timeline */
+.app-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-timeline-item {
+  display: flex;
+  gap: 14px;
+  position: relative;
+}
+
+.app-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: 6px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.app-timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  bottom: -22px;
+  width: 2px;
+  background: rgba(0,0,0,0.06);
+}
+
+.app-timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  background: var(--bg);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+}
+
+.app-timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.app-timeline-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--warning);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.app-timeline-ref {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+/* Modal */
+.schemes-modal {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  animation: scaleIn 0.3s ease-out;
+  overflow: hidden;
+}
+
+.scheme-form-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-scheme-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.modal-scheme-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  background: var(--bg);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.scheme-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scheme-submit-btn {
+  padding: 12px;
+  background: var(--gradient-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.scheme-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(27,94,32,0.2);
+}
+
+@media (max-width: 900px) {
+  .schemes-layout { grid-template-columns: 1fr; }
+}

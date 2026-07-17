@@ -1,0 +1,17 @@
+.animated-circuit-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3; /* Place behind everything including sidebar and content */
+  pointer-events: none; /* Let clicks pass through to UI components */
+  display: block;
+}
+
+/* Optimize rendering performance in browsers */
+.animated-circuit-bg {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}

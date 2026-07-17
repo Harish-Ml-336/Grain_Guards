@@ -1,0 +1,130 @@
+.bin-monitoring-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.bm-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bm-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.bm-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--surface);
+  border: 2px solid transparent;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.bm-filter-btn:hover {
+  border-color: rgba(0,0,0,0.1);
+}
+
+.bm-filter-btn.active-all {
+  background: var(--primary-bg);
+  color: var(--primary);
+  border-color: var(--primary-lighter);
+}
+
+.bm-filter-btn.active-normal {
+  background: #E8F5E9;
+  color: #2E7D32;
+  border-color: #4CAF50;
+}
+
+.bm-filter-btn.active-warning {
+  background: #FFF3E0;
+  color: #F57C00;
+  border-color: #FFB300;
+}
+
+.bm-filter-btn.active-critical {
+  background: #FFEBEE;
+  color: #D32F2F;
+  border-color: #EF5350;
+}
+
+.filter-count {
+  background: rgba(0,0,0,0.08);
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+.bm-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 2px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.bm-search:focus-within {
+  border-color: var(--primary-lighter);
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.1);
+}
+
+.bm-search input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 0.85rem;
+  width: 220px;
+}
+
+.bm-search svg {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.bm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.bm-grid-item {
+  animation: slideUp 0.5s ease-out both;
+}
+
+.bm-empty {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: var(--text-secondary);
+  gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .bm-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .bm-grid { grid-template-columns: 1fr; }
+  .bm-toolbar { flex-direction: column; }
+}

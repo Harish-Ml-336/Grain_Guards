@@ -1,0 +1,47 @@
+.bin-grid-section {
+  animation: slideUp 0.5s ease-out both;
+}
+
+.bin-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.bin-grid-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.bin-grid-link {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.bin-grid-link:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+.bin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.bin-grid-item {
+  animation: slideUp 0.5s ease-out both;
+}
+
+@media (max-width: 1200px) {
+  .bin-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .bin-grid { grid-template-columns: 1fr; }
+}

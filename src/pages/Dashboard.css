@@ -1,0 +1,132 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dash-section {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.dash-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.dash-row-main {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.dash-left {
+  min-height: 0;
+}
+
+.dash-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+}
+
+.dash-weather,
+.dash-trend {
+  min-height: 0;
+}
+
+/* ── Dashboard Cards Override ───────────── */
+.dashboard .card {
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s;
+  color: var(--text);
+}
+
+.dashboard .card:hover {
+  box-shadow: var(--shadow-md), 0 0 15px rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* ── Section Headings ────────────────────── */
+.dash-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ── Market Price Item ───────────────────── */
+.market-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.88rem;
+}
+
+.market-price-row:last-child {
+  border-bottom: none;
+}
+
+.price-up { color: var(--safe); font-weight: 700; text-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
+.price-down { color: var(--danger); font-weight: 700; text-shadow: 0 0 8px rgba(255, 42, 85, 0.4); }
+
+/* ── Transaction Item ──────────────────── */
+.txn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.85rem;
+}
+
+.txn-row:last-child {
+  border-bottom: none;
+}
+
+.txn-info strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.txn-info span {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.txn-right {
+  text-align: right;
+}
+
+.txn-amount {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 1200px) {
+  .dash-row-3 {
+    grid-template-columns: 1fr;
+  }
+  .dash-row-main {
+    grid-template-columns: 1fr;
+  }
+}

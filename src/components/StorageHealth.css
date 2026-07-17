@@ -1,0 +1,58 @@
+.storage-health-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  animation: slideUp 0.5s ease-out both;
+}
+
+.sh-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.sh-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sh-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideUp 0.4s ease-out both;
+}
+
+.sh-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  min-width: 120px;
+  white-space: nowrap;
+}
+
+.sh-bar-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.sh-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  animation: progressFill 1s ease-out both;
+  width: var(--progress-width);
+}
+
+.sh-percent {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 36px;
+  text-align: right;
+}

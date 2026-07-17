@@ -1,0 +1,46 @@
+.quick-actions-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  animation: slideUp 0.5s ease-out both;
+}
+
+.qa-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.qa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.qa-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  white-space: nowrap;
+}
+
+.qa-btn:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+.qa-green { background: linear-gradient(135deg, #2E7D32, #4CAF50); }
+.qa-blue { background: linear-gradient(135deg, #1565C0, #42A5F5); }
+.qa-purple { background: linear-gradient(135deg, #6A1B9A, #AB47BC); }
+.qa-gray { background: linear-gradient(135deg, #455A64, #78909C); }

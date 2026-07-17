@@ -1,0 +1,282 @@
+.fert-marketplace-page {
+  animation: fadeIn 0.4s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Tab Switcher ─────────────────── */
+.fert-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 5px;
+  width: fit-content;
+}
+
+.fert-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.fert-tab:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.fert-tab.active {
+  background: var(--primary-bg);
+  color: var(--primary);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+}
+
+.fert-tab.govt-tab.active {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--safe);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+/* ── Header Row ─────────────────── */
+.fert-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.fert-result-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ── Govt Badge on Card ─────────────────── */
+.fert-govt-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(16, 185, 129, 0.9);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ── Govt Card Border Accent ─────────────────── */
+.market-card.govt-card {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.market-card.govt-card:hover {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+/* ── Category Badge (image overlay) ─────────────────── */
+.fert-category-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--primary);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Description ─────────────────── */
+.fert-description {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: -2px 0 2px;
+}
+
+/* ── Scheme Tag (Govt) ─────────────────── */
+.fert-scheme-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--safe);
+}
+
+/* ── Star Ratings ─────────────────── */
+.fert-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.fert-star {
+  color: rgba(255, 255, 255, 0.12);
+  transition: color 0.2s;
+}
+
+.fert-star.filled {
+  color: #FFC107;
+  fill: #FFC107;
+}
+
+.fert-star.half {
+  color: #FFC107;
+  fill: none;
+}
+
+.fert-rating-text {
+  margin-left: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* ── Stock low color ─────────────────── */
+.stock-value.low {
+  color: var(--warning);
+}
+
+/* ── Price Section ─────────────────── */
+.fert-price-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.fert-price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.fert-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.fert-unit {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.fert-price-govt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fert-mrp {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+}
+
+.fert-subsidy-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--safe);
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Buy Button Full Width ─────────────────── */
+.fert-marketplace-page .market-footer {
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.fert-marketplace-page .market-buy-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 10px 14px;
+}
+
+/* ── Empty State ─────────────────── */
+.fert-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.fert-empty h3 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+.fert-empty p {
+  font-size: 0.85rem;
+}
+
+/* ── Responsive ─────────────────── */
+@media (max-width: 768px) {
+  .fert-tabs {
+    width: 100%;
+  }
+
+  .fert-tab {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 0.78rem;
+  }
+
+  .fert-header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .fert-tab {
+    font-size: 0.72rem;
+    padding: 8px 10px;
+    gap: 5px;
+  }
+}

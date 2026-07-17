@@ -1,0 +1,475 @@
+/* ═══════════════════════════════════════════
+   Community Page – Dark Glassmorphism
+   ═══════════════════════════════════════════ */
+
+.community-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: commFadeIn 0.45s ease-out;
+}
+
+@keyframes commFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Page Header ─────────────────────────── */
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  border-radius: 16px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+}
+
+.community-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--primary);
+}
+
+.community-header-left h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.community-header-left p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 2px 0 0;
+}
+
+.community-header-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.comm-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comm-stat-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-shadow: var(--glow-primary);
+}
+
+.comm-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+/* ── Two-Column Grid ─────────────────────── */
+.community-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── Section Title Bar ───────────────────── */
+.section-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--primary);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ══════════════════════════════════════════
+   LEFT – Farmer Directory
+   ══════════════════════════════════════════ */
+.community-directory {
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+}
+
+.farmer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 620px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.farmer-list::-webkit-scrollbar {
+  width: 5px;
+}
+.farmer-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+/* ── Farmer Card ─────────────────────────── */
+.farmer-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.farmer-card:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Avatar circle */
+.farmer-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #090B10;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Info block */
+.farmer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.farmer-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.farmer-location,
+.farmer-specialty,
+.farmer-phone {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 2px 0;
+}
+
+.farmer-phone a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.farmer-phone a:hover {
+  color: #fff;
+  text-shadow: var(--glow-primary);
+}
+
+/* Action buttons */
+.farmer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.farmer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.25s, transform 0.2s, background 0.25s;
+}
+
+.farmer-btn-call {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--safe);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.farmer-btn-call:hover {
+  background: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
+}
+
+.farmer-btn-chat {
+  background: var(--primary-bg);
+  color: var(--primary);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.farmer-btn-chat:hover {
+  background: rgba(0, 229, 255, 0.2);
+  box-shadow: var(--glow-primary);
+  transform: translateY(-1px);
+}
+
+/* ══════════════════════════════════════════
+   RIGHT – Group Chat
+   ══════════════════════════════════════════ */
+.community-chat {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  height: 700px;
+}
+
+.chat-online-badge {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--safe);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Messages area */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px 4px 10px 0;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+/* ── Chat Bubble ─────────────────────────── */
+.chat-bubble {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  animation: bubbleIn 0.3s ease-out;
+}
+
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.chat-bubble-self {
+  flex-direction: row-reverse;
+}
+
+.chat-bubble-self .chat-body {
+  align-items: flex-end;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.chat-bubble-self .chat-text {
+  text-align: right;
+}
+
+.chat-bubble-ai .chat-body {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.15);
+}
+
+.chat-bubble-ai .chat-sender {
+  color: #A78BFA;
+  font-weight: 800;
+}
+
+/* Chat avatar (small) */
+.chat-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #090B10;
+}
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-light);
+  max-width: 85%;
+}
+
+.chat-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.chat-sender {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.chat-time {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+}
+
+.chat-text {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Input Bar ───────────────────────────── */
+.chat-input-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.chat-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.chat-input:focus {
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.12);
+}
+
+.chat-send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00E5FF, #008fa3);
+  color: #090B10;
+  cursor: pointer;
+  font-weight: 700;
+  transition: box-shadow 0.25s, transform 0.2s, opacity 0.2s;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.chat-send-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ══════════════════════════════════════════
+   Responsive
+   ══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-chat {
+    height: 520px;
+  }
+}
+
+@media (max-width: 640px) {
+  .community-header {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    padding: 18px;
+  }
+
+  .community-header-left {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .farmer-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .farmer-location,
+  .farmer-specialty,
+  .farmer-phone {
+    justify-content: center;
+  }
+
+  .farmer-actions {
+    flex-direction: row;
+  }
+
+  .community-chat {
+    height: 450px;
+  }
+}
